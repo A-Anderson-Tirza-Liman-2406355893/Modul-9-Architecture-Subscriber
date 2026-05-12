@@ -57,6 +57,8 @@ async fn main() {
                             "In Anderson's (2406355893) Computer [129500004y]. Message received: {:?}",
                             message
                         );
+                        // Simulate slow processing with 1 second delay
+                        tokio::time::sleep(tokio::time::Duration::from_millis(1000)).await;
                     }
                     Err(e) => {
                         eprintln!("Failed to deserialize message: {}", e);
